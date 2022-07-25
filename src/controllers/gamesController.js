@@ -9,7 +9,7 @@ export async function getGames (req, res){
 export async function postGame(req, res){
     const newGame = req.body;
 
-    const categorySchema = joi.object({
+    const gameSchema = joi.object({
         name: joi.string().required(),
         image: joi.string(),
         stockTotal: joi.number().integer().required(),
@@ -17,7 +17,7 @@ export async function postGame(req, res){
         pricePerDay: joi.number().integer().required()
     })
 
-    const { error } = categorySchema.validate(newGame);
+    const { error } = gameSchema.validate(newGame);
 
     console.log(newGame);
 

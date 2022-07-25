@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import categoriesRouter from './src/routes/categoriesRouter.js'
 import gamesRouter from './src/routes/gamesRouter.js'
+import customersRouter from './src/routes/customersRouter.js'
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ server.use(express.json());
 
 server.use(categoriesRouter);
 server.use(gamesRouter);
+server.use(customersRouter);
 
 server.listen(process.env.PORT, ()=>{
     console.log("Server running on port " + process.env.PORT)
